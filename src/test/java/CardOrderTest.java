@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +12,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CardOrderTest {
 
-    static WebDriver driver = new ChromeDriver();
+    WebDriver driver;
+
+    @BeforeEach
+    void setDriverPath(){
+        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+    }
+
+    @BeforeEach
+    void setUp(){
+        driver = new ChromeDriver();
+    }
 
     @Test
-    static void inputFieldsTest() throws InterruptedException {
+    void inputFieldsTest() throws InterruptedException {
         driver.get("http://localhost:9999");
        // List<WebElement> form = driver.findElements(By.cssSelector("[data_test_id=input__control]"));
         driver.findElement(By.cssSelector("[data_test_id=name]")).findElement(By.className("input__control")).sendKeys("Иванов Василий");
