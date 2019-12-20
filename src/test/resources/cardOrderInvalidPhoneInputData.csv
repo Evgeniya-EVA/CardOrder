@@ -1,0 +1,10 @@
+name,phone,message
+"Иван Иванов","79250000000",Should show phone sub text warning
+"Иван Иванов","+7925000000",Should show name sub text warning
+"Иван Иванов","+792500000001",Should show name sub text warning
+"Иван Иванов","+",Should show name sub text warning
+"Иван Иванов","+7",Should show name sub text warning
+"Иван Иванов","+абвгдежзикл",Should show name sub text warning
+"Иван Иванов","+abcdefghijk",Should show name sub text warning
+"Иван Иванов","+!"§$G$&4564",Should show name sub text warning
+

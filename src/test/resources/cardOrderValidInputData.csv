@@ -1,0 +1,11 @@
+name,phone,message
+"И И","+79250000000",should show order-success message
+"Ив Ив","+79250000000",should show order-success message
+"Иван Иванов","+79250000000",should show order-success message
+"Иван Иванов","+79250000000",should show order-success message
+"Иван  Иванов","+79250000000",should show order-success message
+" Иван Иванов","+79250000000",should show order-success message
+"Иван Иванов ","+79250000000",should show order-success message
+"Иван   Иванов","+79250000000",should show order-success message
+"Иван Иванов-Петров","+79250000000",should show order-success message
+"Иван Иванов Петров","+79250000000",should show order-success message
