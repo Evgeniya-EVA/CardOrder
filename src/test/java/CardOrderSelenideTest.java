@@ -35,6 +35,17 @@ public class CardOrderSelenideTest {
     }
 
     @Test
+    void checkBoxShouldBeFilledTest(){
+        open("http://localhost:9999");
+        $("[data-test-id=\"name\"]").$(By.name("name")).setValue("Иванов Иван");
+        $("[data-test-id=\"phone\"]").$(By.name("phone")).setValue("+79250000000");
+        $("button").click();
+        $("[data-test-id=\"agreement\"]")
+                .$(By.className("checkbox__text"))
+                .shouldBe(Condition.cssValue("color", "rgba(255, 92, 92, 1)"));
+    }
+
+    @Test
     void inputNameInvalidInputSubTextShouldBeRedTest(){
         open("http://localhost:9999");
         $("[data-test-id=\"name\"]").$(By.name("name")).setValue("");
@@ -100,6 +111,4 @@ public class CardOrderSelenideTest {
                         "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."
                 ));
     }
-
-
 }
