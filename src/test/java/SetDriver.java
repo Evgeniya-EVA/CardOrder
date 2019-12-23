@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import com.sun.javafx.PlatformUtil;
 
 public class SetDriver {
     private String osName;
@@ -12,19 +13,19 @@ public class SetDriver {
         driverPath = getDriverPath();
         return new ChromeDriver();
     }
-
-    private String getOperationSystem() {
-        return System.getProperty("os.name");
-    }
+//
+//    private String getOperationSystem() {
+//        return System.getProperty("os.name");
+//    }
 
     public String getDriverPath(){
-        osName = getOperationSystem().toLowerCase();
+//        osName = getOperationSystem().toLowerCase();
         String osDriverPath;
-        if (osName.contains("win")) {
-            osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/windows_web_driver/chromedriver.exe");
-        } else if (osName.contains("mac") || (osName.contains("os x"))){
-            osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/mac_web_driver/chromedriver");
-        } else osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/linux_web_driver/chromedriver");
+        if (PlatformUtil.isWindows()) {
+            osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/windows_web_driver/chromedriver_80.exe");
+        } else if (PlatformUtil.isMac()){
+            osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/mac_web_driver/chromedriver_80");
+        } else osDriverPath = System.setProperty("webdriver.chrome.driver", "./drivers/linux_web_driver/chromedriver_80");
         return osDriverPath;
     }
 }
