@@ -1,6 +1,6 @@
 name,phone,message
 "И","+79250000000",Should show name sub text warning
-"И ","+79250000000",Should show name sub text warning
+" Иванов Иван ","+79250000000",Should show name sub text warning
 "Иван ИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИванов","+79250000000",Should show name sub text warning
 "Иван! Иванов","79250000000",Should show name sub text warning
 "Ivan Ivanov","+79250000000",Should show name sub text warning
